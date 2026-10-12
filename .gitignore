@@ -1,0 +1,4 @@
+fixture/vendor/
+node_modules/
+.DS_Store
+*.local.json

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docker search fixture</title>
+<!-- webGUI styles, if scripts/fetch-vendor.sh has been run (they 404 harmlessly otherwise) -->
+<link rel="stylesheet" href="/webGui/styles/default-fonts.css">
+<link rel="stylesheet" href="/webGui/styles/default-cases.css">
+<link rel="stylesheet" href="/webGui/styles/font-awesome.css">
+<link rel="stylesheet" href="/webGui/styles/default-color-palette.css">
+<link rel="stylesheet" href="/webGui/styles/default-base.css">
+<link rel="stylesheet" href="/webGui/styles/default-dynamix.css">
+<link rel="stylesheet" href="/webGui/styles/themes/white.css" id="theme-css">
+<link rel="stylesheet" href="/plugins/dynamix.docker.manager/sheets/DockerContainers.css">
+<link rel="stylesheet" href="/plugins/folder.view2/styles/docker.css">
+<link rel="stylesheet" href="/fixture/fixture.css">
+<!-- the plugin, at the paths the real page uses -->
+<link rel="stylesheet" href="/plugins/docker.search/css/docker-search.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+</head>
+<body>
+<div id="fixture-tools">
+  <strong>Fixture</strong>
+  <label>Theme <select id="fx-theme"><option>white</option><option>black</option><option>azure</option><option>gray</option></select></label>
+  <label><input type="checkbox" class="advancedview" id="fx-advanced"> Advanced view</label>
+  <label><input type="checkbox" id="fx-folders" checked> folder.view2</label>
+  <button type="button" id="fx-reload">Reload list</button>
+  <button type="button" id="fx-lock">Unlock sorting</button>
+  <span id="fx-log"></span>
+</div>
+
+<div id="displaybox">
+  <div class="content">
+    <div class="title"><span class="left"><i class="fa fa-cubes title"></i>Docker Containers</span></div>
+    <div class="TableContainer">
+      <table id="docker_containers" class="tablesorter shift">
+        <thead>
+          <tr>
+            <th>Application</th>
+            <th>Version</th>
+            <th>Network</th>
+            <th>Container IP <span class="advanced">/ MAC</span></th>
+            <th>Container Port</th>
+            <th>LAN IP:Port</th>
+            <th>Volume Mappings <small>(App to Host)</small></th>
+            <th class="load advanced">CPU &amp; Memory load</th>
+            <th class="nine">Autostart</th>
+            <th class="five">Uptime</th>
+          </tr>
+        </thead>
+        <tbody id="docker_list"><tr><td colspan="10"></td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+// Stand-ins for the parts of DockerContainers.page the plugin touches.
+var docker = [];
+function addDockerContainerContext() { log('context menu: ' + arguments[0]); }
+function editContainer(name) { log('edit: ' + name); }
+function updateContainer(name) { log('update: ' + name); }
+function log(s) { document.getElementById('fx-log').textContent = s; }
+function listview() {
+  var more = $.cookie('docker_listview_mode') == 'advanced';
+  $('input.autostart').each(function () {
+    var wait = $('#' + $(this).prop('id').replace('auto', 'wait'));
+    if ($(this).prop('checked') && more) wait.show(); else wait.hide();
+  });
+}
+function loadlist() {
+  Promise.all([
+    fetch('/fixture/rows.html', { cache: 'no-store' }).then(r => r.text()),
+    fetch('/fixture/docker-push.js', { cache: 'no-store' }).then(r => r.text())
+  ]).then(function (res) {
+    docker = [];
+    $('#docker_list').html(res[0]);
+    (new Function(res[1]))();
+    if ($.cookie('docker_listview_mode') == 'advanced') { $('.advanced').show(); $('.basic').hide(); }
+    listview();
+  });
+}
+</script>
+<script>
+  if (new URLSearchParams(location.search).has('nofolders')) document.getElementById('fx-folders').checked = false;
+  else document.write('<script src="/fixture/fv2-stub.js"><\/script>');
+</script>
+<script src="/plugins/docker.search/js/filter-core.js"></script>
+<script src="/plugins/docker.search/js/docker-search.js"></script>
+<script>
+$(function () {
+  var theme = localStorage.getItem('fx-theme') || 'white';
+  $('#fx-theme').val(theme).on('change', function () {
+    localStorage.setItem('fx-theme', this.value);
+    $('#theme-css').attr('href', '/webGui/styles/themes/' + this.value + '.css');
+  }).trigger('change');
+
+  $('#fx-advanced').prop('checked', $.cookie('docker_listview_mode') == 'advanced').on('change', function () {
+    $('.advanced').toggle('slow');
+    $('.basic').toggle('slow');
+    $.cookie('docker_listview_mode', this.checked ? 'advanced' : 'basic', { expires: 3650 });
+    listview();
+  });
+  $('#fx-folders').on('change', function () {
+    location.search = this.checked ? '' : '?nofolders';
+  });
+  $('#fx-reload').on('click', function () { loadlist(); });
+  $('#fx-lock').on('click', function () {
+    if ($('#docker_list').hasClass('ui-sortable')) {
+      $('#docker_list').sortable('destroy');
+      $('i.mover').hide();
+      this.textContent = 'Unlock sorting';
+    } else {
+      $('i.mover').show();
+      $('#docker_list').sortable({ helper: 'clone', items: '.sortable', cursor: 'grab', axis: 'y', containment: 'parent', delay: 100, opacity: 0.5,
+        update: function () {
+          var names = $('#docker_list').find('td.ct-name .appname').map(function () { return $(this).text(); }).get();
+          log('saved order: ' + names.slice(0, 6).join(', ') + ' ...');
+        } });
+      this.textContent = 'Lock sorting';
+    }
+  });
+  loadlist();
+});
+</script>
+</body>
+</html>

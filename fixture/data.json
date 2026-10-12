@@ -1,0 +1,1812 @@
+{
+ "containers": [
+  {
+   "id": "d1cb23f66303",
+   "name": "adguardhome",
+   "image": "adguard/adguardhome:latest",
+   "status": "Up 2 days",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.20"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:3000]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/AdguardTeam/AdGuardHome",
+    "org.opencontainers.image.title": "AdGuard Home",
+    "org.opencontainers.image.vendor": "AdGuard",
+    "org.opencontainers.image.version": "v0.107.79"
+   }
+  },
+  {
+   "id": "ab0047aed64f",
+   "name": "adguardhome-sync",
+   "image": "lscr.io/linuxserver/adguardhome-sync:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.66"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8080]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-adguardhome-sync",
+    "org.opencontainers.image.title": "Adguardhome-sync",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "v0.9.3-ls175"
+   }
+  },
+  {
+   "id": "f4eee0b7aa5f",
+   "name": "apprise",
+   "image": "caronc/apprise:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.67"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8000]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "MIT",
+    "org.opencontainers.image.source": "https://github.com/caronc/apprise-api",
+    "org.opencontainers.image.title": "apprise-api",
+    "org.opencontainers.image.version": "2.0.1"
+   }
+  },
+  {
+   "id": "50be832addaf",
+   "name": "binhex-jackett",
+   "image": "binhex/arch-jackett:latest",
+   "status": "Up 29 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.68"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:9117]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.source": "https://github.com/binhex/arch-jackett"
+   }
+  },
+  {
+   "id": "b9c8143bd9e6",
+   "name": "binhex-lidarr",
+   "image": "binhex/arch-lidarr:latest",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.7"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8686]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/binhex/arch-lidarr",
+    "org.opencontainers.image.title": "arch-lidarr",
+    "org.opencontainers.image.version": "3.1.0.4875-1-02"
+   }
+  },
+  {
+   "id": "df7412bba39c",
+   "name": "binhex-privoxyvpn",
+   "image": "binhex/arch-privoxyvpn:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.14"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://config.privoxy.org/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/binhex/arch-privoxyvpn",
+    "org.opencontainers.image.title": "arch-int-vpn",
+    "org.opencontainers.image.version": "2026093001"
+   }
+  },
+  {
+   "id": "06137b10ff55",
+   "name": "binhex-qbittorrentvpn",
+   "image": "binhex/arch-qbittorrentvpn:latest",
+   "status": "Up 17 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.41"
+   },
+   "cpuset": "16,17,18,19,20,21,22,23,48,49,50,51,52,53,54,55",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8080]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/binhex/arch-qbittorrentvpn",
+    "org.opencontainers.image.title": "arch-qbittorrentvpn",
+    "org.opencontainers.image.version": "5.2.4-1-02"
+   }
+  },
+  {
+   "id": "958a661ccaf1",
+   "name": "binhex-radarr",
+   "image": "binhex/arch-radarr:latest",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.8"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:7878]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.source": "https://github.com/binhex/arch-radarr"
+   }
+  },
+  {
+   "id": "977b86f91276",
+   "name": "binhex-radarr4k",
+   "image": "binhex/arch-radarr:latest",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.9"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:7878]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.source": "https://github.com/binhex/arch-radarr"
+   }
+  },
+  {
+   "id": "902ed7acd2be",
+   "name": "binhex-sabnzbd",
+   "image": "binhex/arch-sabnzbd:latest",
+   "status": "Up 2 days (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.12"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8080]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.source": "https://github.com/binhex/arch-crafty"
+   }
+  },
+  {
+   "id": "9e101269ffea",
+   "name": "binhex-sonarr",
+   "image": "binhex/arch-sonarr:latest",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.10"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8989]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/binhex/arch-sonarr",
+    "org.opencontainers.image.title": "arch-sonarr",
+    "org.opencontainers.image.version": "4.0.20.3014-1-01"
+   }
+  },
+  {
+   "id": "0d0940fb6721",
+   "name": "bookshelf",
+   "image": "ghcr.io/pennydreadful/bookshelf:hardcover",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.69"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8787]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/pennydreadful/bookshelf",
+    "org.opencontainers.image.title": "bookshelf",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "hardcover"
+   }
+  },
+  {
+   "id": "9724a25bf243",
+   "name": "certimate",
+   "image": "certimate/certimate:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.23"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8090]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "3725f8ca5872",
+   "name": "dev-shell",
+   "image": "library/dev-shell:local",
+   "status": "Up 20 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.51"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.version": "24.04"
+   }
+  },
+  {
+   "id": "dbf8ea4c21ca",
+   "name": "cloudflareddns",
+   "image": "favonia/cloudflare-ddns:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "bridge",
+   "networks": {
+    "bridge": "172.17.0.2"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "Apache-2.0",
+    "org.opencontainers.image.source": "https://github.com/favonia/cloudflare-ddns",
+    "org.opencontainers.image.title": "cloudflare-ddns",
+    "org.opencontainers.image.version": "1.17.1"
+   }
+  },
+  {
+   "id": "b4a79917f317",
+   "name": "copyparty",
+   "image": "ghcr.io/9001/copyparty-ac:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.70"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:3923]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "MIT",
+    "org.opencontainers.image.source": "https://github.com/9001/copyparty",
+    "org.opencontainers.image.title": "copyparty-ac",
+    "org.opencontainers.image.version": "1.20.25"
+   }
+  },
+  {
+   "id": "f5c4c81e3ddb",
+   "name": "dns-server",
+   "image": "technitium/dns-server:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.224"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:5380]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.source": "https://github.com/TechnitiumSoftware/DnsServer",
+    "org.opencontainers.image.title": "Technitium DNS Server",
+    "org.opencontainers.image.vendor": "Technitium",
+    "org.opencontainers.image.version": "15.6.0"
+   }
+  },
+  {
+   "id": "7dfbff9c1c71",
+   "name": "docker-diag-tools",
+   "image": "ccmpbll/docker-diag-tools:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "none",
+   "networks": {
+    "none": ""
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "a8f88f2a432a",
+   "name": "docker-dns",
+   "image": "lmendelowski/devdns:latest",
+   "status": "Up 2 days",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.21"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "b589b1442b71",
+   "name": "docker-tc",
+   "image": "ethanvdh/docker-tc:latest",
+   "status": "Restarting (1) 16 seconds ago",
+   "running": true,
+   "paused": false,
+   "networkMode": "host",
+   "networks": {
+    "host": "192.168.3.4"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "ad70c7a5496e",
+   "name": "dockersocket",
+   "image": "ghcr.io/tecnativa/docker-socket-proxy:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "host",
+   "networks": {
+    "host": "192.168.3.4"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "Apache-2.0",
+    "org.opencontainers.image.source": "https://github.com/Tecnativa/docker-socket-proxy",
+    "org.opencontainers.image.title": "docker-socket-proxy",
+    "org.opencontainers.image.version": "v0.5.0"
+   }
+  },
+  {
+   "id": "a80b8640239f",
+   "name": "list-aggregator",
+   "image": "ghcr.io/example/list-aggregator:latest",
+   "status": "Up 29 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.19"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:80]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "MIT",
+    "org.opencontainers.image.source": "https://github.com/example/list-aggregator",
+    "org.opencontainers.image.title": "list-aggregator",
+    "org.opencontainers.image.version": "main"
+   }
+  },
+  {
+   "id": "c9a9da3ea483",
+   "name": "epicgames-freegames",
+   "image": "charlocharlie/epicgames-freegames:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.71"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:3000]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.title": "epicgames-freegames-node",
+    "org.opencontainers.image.version": "latest"
+   }
+  },
+  {
+   "id": "6f7a28a8e2e7",
+   "name": "esphome-builder-1",
+   "image": "ghcr.io/esphome/esphome:stable",
+   "status": "Up 2 days (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0",
+   "networks": {
+    "br0": "192.168.3.211"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:6052]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "ESPHome",
+    "org.opencontainers.image.source": "https://github.com/esphome/esphome",
+    "org.opencontainers.image.title": "ESPHome",
+    "org.opencontainers.image.version": "2026.9.1"
+   }
+  },
+  {
+   "id": "e11ca6aea9ff",
+   "name": "esphome-builder-2",
+   "image": "ghcr.io/esphome/esphome:stable",
+   "status": "Up 2 days (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0",
+   "networks": {
+    "br0": "192.168.3.212"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:6052]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "ESPHome",
+    "org.opencontainers.image.source": "https://github.com/esphome/esphome",
+    "org.opencontainers.image.title": "ESPHome",
+    "org.opencontainers.image.version": "2026.9.1"
+   }
+  },
+  {
+   "id": "b95c1056a3c1",
+   "name": "esphome-builder-3",
+   "image": "ghcr.io/esphome/esphome:stable",
+   "status": "Up 2 days (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0",
+   "networks": {
+    "br0": "192.168.3.213"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:6052]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "ESPHome",
+    "org.opencontainers.image.source": "https://github.com/esphome/esphome",
+    "org.opencontainers.image.title": "ESPHome",
+    "org.opencontainers.image.version": "2026.9.1"
+   }
+  },
+  {
+   "id": "b1f6c8183474",
+   "name": "esphome-builder-4",
+   "image": "ghcr.io/esphome/esphome:stable",
+   "status": "Up 2 days (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0",
+   "networks": {
+    "br0": "192.168.3.214"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:6052]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "ESPHome",
+    "org.opencontainers.image.source": "https://github.com/esphome/esphome",
+    "org.opencontainers.image.title": "ESPHome",
+    "org.opencontainers.image.version": "2026.9.1"
+   }
+  },
+  {
+   "id": "ee88b1abd842",
+   "name": "esphome-builder-5",
+   "image": "ghcr.io/esphome/esphome:stable",
+   "status": "Up 2 days (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0",
+   "networks": {
+    "br0": "192.168.3.215"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:6052]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "ESPHome",
+    "org.opencontainers.image.source": "https://github.com/esphome/esphome",
+    "org.opencontainers.image.title": "ESPHome",
+    "org.opencontainers.image.version": "2026.9.1"
+   }
+  },
+  {
+   "id": "d8a6951ae587",
+   "name": "esphome-builder-6",
+   "image": "ghcr.io/esphome/esphome:stable",
+   "status": "Up 2 days (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0",
+   "networks": {
+    "br0": "192.168.3.216"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:6052]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "ESPHome",
+    "org.opencontainers.image.source": "https://github.com/esphome/esphome",
+    "org.opencontainers.image.title": "ESPHome",
+    "org.opencontainers.image.version": "2026.9.1"
+   }
+  },
+  {
+   "id": "edac37146b59",
+   "name": "flaresolverr",
+   "image": "flaresolverr/flaresolverr:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.72"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "MIT",
+    "org.opencontainers.image.source": "https://github.com/FlareSolverr/FlareSolverr",
+    "org.opencontainers.image.title": "FlareSolverr",
+    "org.opencontainers.image.version": "v3.5.2"
+   }
+  },
+  {
+   "id": "1950bb2c4ac5",
+   "name": "Framerr",
+   "image": "pickels23/framerr:latest",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.73"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:3001]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.source": "https://github.com/pickels23/framerr",
+    "org.opencontainers.image.title": "Framerr",
+    "org.opencontainers.image.version": "0.4.1"
+   }
+  },
+  {
+   "id": "ffe860e764ac",
+   "name": "homepage",
+   "image": "ghcr.io/gethomepage/homepage:latest",
+   "status": "Up 23 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.75"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:3000]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/gethomepage/homepage",
+    "org.opencontainers.image.title": "homepage",
+    "org.opencontainers.image.version": "v2.5.0"
+   }
+  },
+  {
+   "id": "37a46259ee59",
+   "name": "houndarr",
+   "image": "ghcr.io/av1155/houndarr:latest",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.76"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8877]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "AGPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/av1155/houndarr",
+    "org.opencontainers.image.title": "houndarr",
+    "org.opencontainers.image.version": "v1.13.3"
+   }
+  },
+  {
+   "id": "abe16f6a86da",
+   "name": "Influxdb",
+   "image": "library/influxdb:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.199"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8083]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "60b0c48c771a",
+   "name": "IT-Tools",
+   "image": "corentinth/it-tools:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.77"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:80]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "f4b9f3df6df2",
+   "name": "kometa",
+   "image": "lscr.io/linuxserver/kometa:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.78"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-kometa",
+    "org.opencontainers.image.title": "Kometa",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "v2.5.1-ls120"
+   }
+  },
+  {
+   "id": "4ef638fe7fb2",
+   "name": "Lancache",
+   "image": "lancachenet/monolithic:latest",
+   "status": "Up 2 days (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.16"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.version": "24.04"
+   }
+  },
+  {
+   "id": "fee5fdc49bda",
+   "name": "Lancache-DNS",
+   "image": "lancachenet/lancache-dns:latest",
+   "status": "Up 2 days",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.15"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.version": "24.04"
+   }
+  },
+  {
+   "id": "6af1413688be",
+   "name": "librespeed",
+   "image": "ghcr.io/librespeed/speedtest:latest",
+   "status": "Up 29 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.79"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8080]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "LGPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/librespeed/speedtest",
+    "org.opencontainers.image.title": "speedtest",
+    "org.opencontainers.image.vendor": "LibreSpeed",
+    "org.opencontainers.image.version": "master"
+   }
+  },
+  {
+   "id": "de3554e51a93",
+   "name": "linstor-gui",
+   "image": "ghcr.io/rumenblack84/linstor-gui-docker:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.80"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "8dc8c1970394",
+   "name": "LocalAI",
+   "image": "localai/localai:latest-gpu-nvidia-cuda-12",
+   "status": "Created",
+   "running": false,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": ""
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8080]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "MIT",
+    "org.opencontainers.image.source": "https://github.com/mudler/LocalAI",
+    "org.opencontainers.image.title": "LocalAI",
+    "org.opencontainers.image.version": "v4.11.0-gpu-nvidia-cuda-12"
+   }
+  },
+  {
+   "id": "507a220b618b",
+   "name": "mariadb",
+   "image": "linuxserver/mariadb:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.64"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-mariadb",
+    "org.opencontainers.image.title": "Mariadb",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "11.8.8-r0-ls234"
+   }
+  },
+  {
+   "id": "97c7396490af",
+   "name": "MySpeed",
+   "image": "germannewsmaker/myspeed:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.81"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:5216]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "0b04c8f6076d",
+   "name": "netbootxyz",
+   "image": "netbootxyz/netbootxyz:latest",
+   "status": "Up 29 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.111"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "Apache-2.0",
+    "org.opencontainers.image.source": "https://github.com/netbootxyz/docker-netbootxyz",
+    "org.opencontainers.image.title": "netbootxyz",
+    "org.opencontainers.image.vendor": "netboot.xyz",
+    "org.opencontainers.image.version": "0.7.6-nbxyz24"
+   }
+  },
+  {
+   "id": "291926cb92ff",
+   "name": "nextcloud",
+   "image": "linuxserver/nextcloud:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.82"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "https://[IP]:[PORT:443]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-nextcloud",
+    "org.opencontainers.image.title": "Nextcloud",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "35.0.1-ls454"
+   }
+  },
+  {
+   "id": "9a0433d54077",
+   "name": "Nginx-Proxy-Manager",
+   "image": "jc21/nginx-proxy-manager:2.16.0",
+   "status": "Up 17 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.2"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:81]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "3447a851b645",
+   "name": "ntp",
+   "image": "cturra/ntp:latest",
+   "status": "Up 2 days (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.34"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "f2f332af2a1b",
+   "name": "ollama",
+   "image": "ollama/ollama:latest",
+   "status": "Up 23 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.50"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:11434]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.version": "24.04"
+   }
+  },
+  {
+   "id": "3935a50ea918",
+   "name": "omada-controller",
+   "image": "mbentley/omada-controller:latest",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.6"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "https://[IP]:[PORT:8043]/login",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.source": "https://github.com/mbentley/docker-omada-controller"
+   }
+  },
+  {
+   "id": "8ef0d86c3317",
+   "name": "ombi",
+   "image": "linuxserver/ombi:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.83"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:3579]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-ombi",
+    "org.opencontainers.image.title": "Ombi",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "v4.53.10-ls272"
+   }
+  },
+  {
+   "id": "2a20c5e3bf8f",
+   "name": "open-webui",
+   "image": "ghcr.io/open-webui/open-webui:main",
+   "status": "Created",
+   "running": false,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": ""
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8080]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "NOASSERTION",
+    "org.opencontainers.image.source": "https://github.com/open-webui/open-webui",
+    "org.opencontainers.image.title": "open-webui",
+    "org.opencontainers.image.version": "main"
+   }
+  },
+  {
+   "id": "cc141d9853a8",
+   "name": "OpenSpeedTest",
+   "image": "openspeedtest/latest:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "bridge",
+   "networks": {
+    "bridge": "172.17.0.3"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:3000]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "Apache-2.0",
+    "org.opencontainers.image.source": "https://github.com/nginxinc/docker-nginx-unprivileged",
+    "org.opencontainers.image.title": "docker-nginx-unprivileged",
+    "org.opencontainers.image.version": "1.26.2-alpine"
+   }
+  },
+  {
+   "id": "96e3d9f1712f",
+   "name": "openvscode-server",
+   "image": "lscr.io/linuxserver/openvscode-server:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.84"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:3000]/?tkn=lsio",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-openvscode-server",
+    "org.opencontainers.image.title": "Openvscode-server",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "1.109.5-ls219"
+   }
+  },
+  {
+   "id": "301326decf2e",
+   "name": "paperclip",
+   "image": "ghcr.io/paperclipai/paperclip:2026.1005.0",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.31"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:3100/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "MIT",
+    "org.opencontainers.image.source": "https://github.com/paperclipai/paperclip",
+    "org.opencontainers.image.title": "paperclip",
+    "org.opencontainers.image.version": "2026.1005.0"
+   }
+  },
+  {
+   "id": "b311f8bd6cdc",
+   "name": "paperclip-db",
+   "image": "library/postgres:17-alpine",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.32"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "d5d4f22e33ca",
+   "name": "Plaxt",
+   "image": "xanderstrike/goplaxt:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.85"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8000]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "0ece68e33905",
+   "name": "plex",
+   "image": "linuxserver/plex:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.3"
+   },
+   "cpuset": "32,33,34,35,36,37,38,39,96,97,98,99,100,101,102,103",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:32400]/web",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-plex",
+    "org.opencontainers.image.title": "Plex",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "1.43.4.10903-e5521bd8c-ls327"
+   }
+  },
+  {
+   "id": "e25b88136715",
+   "name": "plexautoskip",
+   "image": "ghcr.io/mdhiggins/plexautoskip-docker:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.86"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-baseimage-alpine",
+    "org.opencontainers.image.title": "Baseimage-alpine",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "3f76d67b-ls31"
+   }
+  },
+  {
+   "id": "3aee780d529c",
+   "name": "PlexTraktSync",
+   "image": "ghcr.io/taxel/plextraktsync:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.98"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "MIT",
+    "org.opencontainers.image.source": "https://github.com/Taxel/PlexTraktSync",
+    "org.opencontainers.image.title": "PlexTraktSync",
+    "org.opencontainers.image.version": "0.35.19"
+   }
+  },
+  {
+   "id": "5cfb1f2cc329",
+   "name": "portainer-agent",
+   "image": "portainer/agent:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "host",
+   "networks": {
+    "host": "192.168.3.4"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.title": "Portainer Agent",
+    "org.opencontainers.image.vendor": "Portainer.io"
+   }
+  },
+  {
+   "id": "71ea86f3c042",
+   "name": "Postfix-Relay",
+   "image": "loganmarchione/docker-postfixrelay:latest",
+   "status": "Up 23 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.100"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.title": "docker-postfixrelay"
+   }
+  },
+  {
+   "id": "5c0ac9b9ed57",
+   "name": "postgresql15",
+   "image": "library/postgres:15",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.65"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "d42c64a899ec",
+   "name": "Prismarr",
+   "image": "ghcr.io/example/prismarr:1.2.0-dc3",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.88"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:7070]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "AGPL-3.0-or-later",
+    "org.opencontainers.image.source": "https://github.com/example/Prismarr",
+    "org.opencontainers.image.title": "Prismarr (example patched build)",
+    "org.opencontainers.image.vendor": "Prismarr",
+    "org.opencontainers.image.version": "1.2.0-dc3"
+   }
+  },
+  {
+   "id": "4ee853b01637",
+   "name": "profilarr",
+   "image": "santiagosayshey/profilarr:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.89"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:6868]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.source": "https://github.com/Dictionarry-Hub/profilarr",
+    "org.opencontainers.image.title": "Profilarr",
+    "org.opencontainers.image.version": "beta"
+   }
+  },
+  {
+   "id": "62aa67f5241c",
+   "name": "prowlarr",
+   "image": "ghcr.io/linuxserver/prowlarr:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.87"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:9696]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-prowlarr",
+    "org.opencontainers.image.title": "Prowlarr",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "2.6.5.5623-ls163"
+   }
+  },
+  {
+   "id": "485c2b92399f",
+   "name": "Pulsarr",
+   "image": "lakker/pulsarr:latest",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.91"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:3003]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "AGPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/jamcalli/Pulsarr",
+    "org.opencontainers.image.title": "Pulsarr",
+    "org.opencontainers.image.version": "v0.19.4"
+   }
+  },
+  {
+   "id": "5e0cdd28605c",
+   "name": "py-kms",
+   "image": "ghcr.io/py-kms-organization/py-kms:python3",
+   "status": "Up 29 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.13"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:8080",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "6bdc89e49877",
+   "name": "qnetd",
+   "image": "modelrockettier/corosync-qnetd:latest",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "bridge",
+   "networks": {
+    "bridge": "172.17.0.4"
+   },
+   "cpuset": "0-7,16-71,80-127",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "MIT",
+    "org.opencontainers.image.source": "https://github.com/modelrockettier/docker-corosync-qnetd",
+    "org.opencontainers.image.title": "corosync-qnetd"
+   }
+  },
+  {
+   "id": "04e69f9af4b4",
+   "name": "scanner-app",
+   "image": "library/scanner-app-scanner-app:latest",
+   "status": "Up 20 minutes",
+   "running": true,
+   "paused": false,
+   "networkMode": "scanner-app_default",
+   "networks": {
+    "scanner-app_default": "172.18.0.2"
+   },
+   "cpuset": "",
+   "manager": "",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "com.docker.compose.project": "scanner-app",
+    "com.docker.compose.service": "scanner-app"
+   }
+  },
+  {
+   "id": "ba377f5f1212",
+   "name": "scanner-app-cloudflared-1",
+   "image": "cloudflare/cloudflared:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "scanner-app_default",
+   "networks": {
+    "scanner-app_default": "172.18.0.3"
+   },
+   "cpuset": "",
+   "manager": "",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "com.docker.compose.project": "scanner-app",
+    "com.docker.compose.service": "cloudflared",
+    "org.opencontainers.image.source": "https://github.com/cloudflare/cloudflared"
+   }
+  },
+  {
+   "id": "01e15b6b6b7a",
+   "name": "seerr",
+   "image": "ghcr.io/seerr-team/seerr:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.90"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:5055]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "MIT",
+    "org.opencontainers.image.source": "https://github.com/seerr-team/seerr",
+    "org.opencontainers.image.title": "seerr",
+    "org.opencontainers.image.version": "v3.5.0"
+   }
+  },
+  {
+   "id": "ebddd8f80b7b",
+   "name": "shrinkray",
+   "image": "ghcr.io/gwlsn/shrinkray:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.93"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8080]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-ffmpeg",
+    "org.opencontainers.image.title": "Ffmpeg",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "8.0.1-cli-ls58"
+   }
+  },
+  {
+   "id": "008ecc8be5b1",
+   "name": "smokeping",
+   "image": "linuxserver/smokeping:latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.94"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:80]/smokeping/smokeping.cgi",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-smokeping",
+    "org.opencontainers.image.title": "Smokeping",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "2.9.0-r0-ls186"
+   }
+  },
+  {
+   "id": "3d393c3b36e5",
+   "name": "steam-headless",
+   "image": "josh5/steam-headless:latest",
+   "status": "Created",
+   "running": false,
+   "paused": false,
+   "networkMode": "host",
+   "networks": {
+    "host": "192.168.3.4"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8083]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.title": "Steam Headless",
+    "org.opencontainers.image.version": "2.44.20261004.1"
+   }
+  },
+  {
+   "id": "df379b5031f7",
+   "name": "suggestarr",
+   "image": "ciuse99/suggestarr:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.92"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:5000]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "6872a233f86a",
+   "name": "Tailscale-Docker",
+   "image": "tailscale/tailscale:stable",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.96"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "39dde0d41d16",
+   "name": "tautulli",
+   "image": "linuxserver/tautulli:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.4"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8181]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL-3.0-only",
+    "org.opencontainers.image.source": "https://github.com/linuxserver/docker-tautulli",
+    "org.opencontainers.image.title": "Tautulli",
+    "org.opencontainers.image.vendor": "linuxserver.io",
+    "org.opencontainers.image.version": "v2.18.2-ls247"
+   }
+  },
+  {
+   "id": "766451886bb1",
+   "name": "kiosk-panel",
+   "image": "ghcr.io/example/kiosk-panel:latest",
+   "status": "Up 7 minutes (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.45"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:8787]/admin",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.source": "https://github.com/example/kiosk-panel"
+   }
+  },
+  {
+   "id": "7276d3a12d4a",
+   "name": "torprivoxy",
+   "image": "avpnusr/torprivoxy:latest",
+   "status": "Up 29 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.95"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "c336ed20e257",
+   "name": "Unraid-API",
+   "image": "bokker/unraidapi-re:latest",
+   "status": "Up 2 days",
+   "running": true,
+   "paused": false,
+   "networkMode": "bridge",
+   "networks": {
+    "bridge": "172.17.0.5"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:3005]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman"
+   }
+  },
+  {
+   "id": "3b981b909093",
+   "name": "Wizarr",
+   "image": "ghcr.io/wizarrrr/wizarr:latest",
+   "status": "Up 5 hours (healthy)",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.99"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:5690]/",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "Apache-2.0",
+    "org.opencontainers.image.source": "https://github.com/astral-sh/uv",
+    "org.opencontainers.image.title": "uv",
+    "org.opencontainers.image.version": "0.12.13-python3.13-alpine3.23"
+   }
+  },
+  {
+   "id": "b8eae105d66b",
+   "name": "zabbix-agent2",
+   "image": "zabbix/zabbix-agent2:5.0-alpine-latest",
+   "status": "Up 29 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "host",
+   "networks": {
+    "host": "192.168.3.4"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "GPL v2.0",
+    "org.opencontainers.image.source": "https://git.zabbix.com/scm/zbx/zabbix.git",
+    "org.opencontainers.image.title": "Zabbix agent 2",
+    "org.opencontainers.image.vendor": "Zabbix SIA",
+    "org.opencontainers.image.version": "5.0.47"
+   }
+  },
+  {
+   "id": "dd71ffc5d8f4",
+   "name": "zerobyte",
+   "image": "ghcr.io/nicotsx/zerobyte:latest",
+   "status": "Up 5 hours",
+   "running": true,
+   "paused": false,
+   "networkMode": "br0.106",
+   "networks": {
+    "br0.106": "192.168.6.40"
+   },
+   "cpuset": "",
+   "manager": "dockerman",
+   "compose": "",
+   "webui": "http://[IP]:[PORT:4096]",
+   "labels": {
+    "net.unraid.docker.managed": "dockerman",
+    "org.opencontainers.image.licenses": "AGPL-3.0",
+    "org.opencontainers.image.source": "https://github.com/nicotsx/zerobyte",
+    "org.opencontainers.image.title": "zerobyte",
+    "org.opencontainers.image.version": "v0.43.2"
+   }
+  }
+ ]
+}

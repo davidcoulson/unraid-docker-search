@@ -1,0 +1,63 @@
+<?xml version='1.0' standalone='yes'?>
+<!DOCTYPE PLUGIN [
+<!ENTITY name      "docker.search">
+<!ENTITY author    "David Coulson">
+<!ENTITY version   "2026.10.12a">
+<!ENTITY md5       "07d93e271fca94affee276f489bab16d">
+<!ENTITY github    "davidcoulson/unraid-docker-search">
+<!ENTITY gitURL    "https://raw.githubusercontent.com/&github;/main">
+<!ENTITY pluginURL "&gitURL;/&name;.plg">
+<!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
+<!ENTITY pkgdir    "/boot/config/plugins/&name;">
+]>
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="Docker" pluginURL="&pluginURL;" icon="search" min="7.0.0" support="https://github.com/&github;/issues">
+
+<CHANGES>
+###2026.10.12a
+- Fix: crafted filter ids in the URL (e.g. #f=constructor) no longer break filtering.
+- Fix: full image tags are searchable even when the page shortens them.
+- Fix: extra container data (CPU pinning, networks, labels) refreshes after the list is redrawn.
+- Fix: a folder you close while filtering stays closed when the list redraws.
+- Fix: autostart switch changes update the chip counts straight away.
+- Fix: the data endpoint returns clean JSON when Docker is unavailable, and caps label data.
+
+###2026.10.12
+- First release: live search box and quick filter chips on the Docker page, with folder.view2 support.
+</CHANGES>
+
+<!-- Remove packages from older versions. -->
+<FILE Run="/bin/bash">
+<INLINE>
+find &pkgdir; -maxdepth 1 -name '&name;-*.txz' ! -name '&name;-&version;.txz' -delete 2>/dev/null
+true
+</INLINE>
+</FILE>
+
+<!-- The plugin files (installs to &plugdir;). -->
+<FILE Name="&pkgdir;/&name;-&version;.txz" Run="upgradepkg --install-new">
+<URL>&gitURL;/archive/&name;-&version;.txz</URL>
+<MD5>&md5;</MD5>
+</FILE>
+
+<FILE Run="/bin/bash">
+<INLINE>
+echo ""
+echo "----------------------------------------------------"
+echo " &name; &version; is installed."
+echo " Open the Docker tab: the search box is above the list."
+echo "----------------------------------------------------"
+echo ""
+</INLINE>
+</FILE>
+
+<!-- Uninstall: the package, its files and the flash folder. -->
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+removepkg &name;-&version; 2>/dev/null || removepkg &pkgdir;/&name;-&version;.txz 2>/dev/null
+rm -rf &plugdir;
+rm -rf &pkgdir;
+echo "&name; has been removed."
+</INLINE>
+</FILE>
+
+</PLUGIN>

@@ -1,0 +1,270 @@
+/*
+ * docker.search: search bar and filter chips for the Unraid Docker page.
+ * Colours come from the webGUI theme variables, so white, black, azure and gray all work.
+ * MIT License. Copyright (c) 2026 David Coulson.
+ */
+
+#docker_list tr.uds-hide,
+#docker_list .folder-storage tr.uds-hide {
+  display: none !important;
+}
+
+#uds-bar {
+  --uds-accent: var(--brand-orange, #ff8c2f);
+  --uds-line: var(--input-border-color, var(--border-color, #999));
+  --uds-muted: var(--alt-text-color, #888);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin: 0 0 10px;
+  padding: 0 2px;
+  font-size: 1.3rem;
+  color: var(--text-color);
+}
+
+/* search box */
+#uds-bar .uds-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 1 320px;
+  min-width: 200px;
+}
+#uds-bar .uds-icon {
+  position: absolute;
+  left: 6px;
+  color: var(--uds-muted);
+  pointer-events: none;
+}
+#uds-bar input.uds-input {
+  width: 100%;
+  margin: 0;
+  padding: .5rem 4.6rem .5rem 2.6rem;
+}
+#uds-bar input.uds-input:focus {
+  border-bottom-color: var(--uds-accent);
+  background-color: var(--focus-input-bg-color, transparent);
+}
+#uds-bar input.uds-input::placeholder {
+  color: var(--uds-muted);
+  opacity: 1;
+}
+#uds-bar .uds-kbd {
+  position: absolute;
+  right: 6px;
+  min-width: 1.6rem;
+  padding: 0 4px;
+  border: 1px solid var(--uds-line);
+  border-radius: 3px;
+  font: 1.1rem/1.6rem clear-sans, sans-serif;
+  text-align: center;
+  color: var(--uds-muted);
+  pointer-events: none;
+}
+#uds-bar input.uds-input:focus ~ .uds-kbd,
+#uds-bar.uds-active .uds-search .uds-kbd {
+  display: none;
+}
+
+/* reset the webGUI button look for our small controls */
+#uds-bar button.uds-clear,
+#uds-bar button.uds-chip,
+#uds-bar button.uds-reset,
+#uds-bar button.uds-help-btn {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: clear-sans, sans-serif;
+  white-space: nowrap;
+}
+#uds-bar button[hidden] {
+  display: none !important;
+}
+#uds-bar button:focus-visible,
+#uds-bar select:focus-visible {
+  outline: 2px solid var(--uds-accent);
+  outline-offset: 2px;
+}
+#uds-bar button.uds-clear {
+  position: absolute;
+  right: 4px;
+  padding: 2px 6px;
+  color: var(--uds-muted);
+}
+#uds-bar button.uds-clear:hover {
+  color: var(--text-color);
+}
+
+/* chips */
+#uds-bar .uds-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+#uds-bar .uds-sep {
+  width: 1px;
+  height: 1.6rem;
+  margin: 0 3px;
+  background: var(--uds-line);
+  opacity: .5;
+}
+#uds-bar .uds-sep[hidden] {
+  display: none;
+}
+#uds-bar button.uds-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 2.6rem;
+  padding: 0 10px;
+  border: 1px solid var(--uds-line);
+  border-radius: 1.3rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--text-color);
+  background: transparent;
+  transition: border-color .15s, background-color .15s, opacity .15s;
+}
+#uds-bar button.uds-chip:hover {
+  border-color: var(--uds-accent);
+}
+#uds-bar button.uds-chip .uds-count {
+  min-width: 1.4rem;
+  padding: 2px 5px;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--uds-muted);
+  background: var(--hover-table-row-background-color, rgba(127, 127, 127, .12));
+}
+#uds-bar button.uds-chip.uds-zero {
+  opacity: .5;
+}
+#uds-bar button.uds-chip.uds-on {
+  border-color: var(--uds-accent);
+  background: color-mix(in srgb, var(--uds-accent) 16%, transparent);
+  opacity: 1;
+}
+#uds-bar button.uds-chip.uds-on .uds-count {
+  color: #fff;
+  background: var(--uds-accent);
+}
+/* status hints that match the row icons */
+#uds-bar .uds-chip-running .uds-chip-label::before,
+#uds-bar .uds-chip-stopped .uds-chip-label::before,
+#uds-bar .uds-chip-paused .uds-chip-label::before,
+#uds-bar .uds-chip-restarting .uds-chip-label::before,
+#uds-bar .uds-chip-healthy .uds-chip-label::before,
+#uds-bar .uds-chip-unhealthy .uds-chip-label::before,
+#uds-bar .uds-chip-starting .uds-chip-label::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  border-radius: 50%;
+  vertical-align: 1px;
+}
+#uds-bar .uds-chip-running .uds-chip-label::before,
+#uds-bar .uds-chip-healthy .uds-chip-label::before { background: var(--green-500, #17bf0b); }
+#uds-bar .uds-chip-stopped .uds-chip-label::before,
+#uds-bar .uds-chip-unhealthy .uds-chip-label::before { background: var(--red-800, #e22828); }
+#uds-bar .uds-chip-paused .uds-chip-label::before,
+#uds-bar .uds-chip-restarting .uds-chip-label::before,
+#uds-bar .uds-chip-starting .uds-chip-label::before { background: var(--orange-500, #ff8c2f); }
+#uds-bar .uds-chip-healthy .uds-chip-label::before,
+#uds-bar .uds-chip-unhealthy .uds-chip-label::before,
+#uds-bar .uds-chip-starting .uds-chip-label::before {
+  border-radius: 2px;
+}
+
+/* network select */
+#uds-bar select.uds-net {
+  width: auto;
+  max-width: 220px;
+  padding-right: 2.4rem;
+  font-size: 1.2rem;
+}
+#uds-bar select.uds-net[hidden] {
+  display: none;
+}
+#uds-bar select.uds-net.uds-on {
+  border-bottom-color: var(--uds-accent);
+}
+
+/* summary, clear, help */
+#uds-bar .uds-summary {
+  margin-left: auto;
+  color: var(--uds-muted);
+  white-space: nowrap;
+}
+#uds-bar.uds-active .uds-summary {
+  color: var(--text-color);
+}
+#uds-bar button.uds-reset {
+  color: var(--link-text-color, var(--uds-accent));
+  font-size: 1.2rem;
+}
+#uds-bar button.uds-reset:hover {
+  text-decoration: underline;
+}
+#uds-bar button.uds-help-btn {
+  color: var(--uds-muted);
+  font-size: 1.5rem;
+}
+#uds-bar button.uds-help-btn:hover,
+#uds-bar button.uds-help-btn[aria-expanded="true"] {
+  color: var(--text-color);
+}
+#uds-bar .uds-help {
+  flex: 1 0 100%;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 14px;
+  padding: 8px 10px;
+  border: 1px solid var(--uds-line);
+  border-radius: 4px;
+  background: var(--mild-background-color, transparent);
+  font-size: 1.2rem;
+}
+#uds-bar .uds-help[hidden] {
+  display: none;
+}
+#uds-bar .uds-help > div {
+  display: contents;
+}
+#uds-bar .uds-help code {
+  font-family: bitstream, monospace;
+  color: var(--uds-accent);
+}
+#uds-bar .uds-help span {
+  color: var(--text-color);
+}
+
+/* folder.view2 rows */
+#docker_list .uds-folder-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  color: #fff;
+  background: var(--brand-orange, #ff8c2f);
+  vertical-align: 1px;
+}
+#docker_list .uds-dim {
+  opacity: .25;
+}
+
+@media (max-width: 768px) {
+  #uds-bar .uds-search {
+    flex: 1 1 100%;
+  }
+  #uds-bar .uds-summary {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,18 @@
+Menu="Buttons"
+Link="nav-user"
+---
+<?
+/* docker.search: adds a search box and quick filters to the Docker containers list.
+ *
+ * A "Buttons" page is evaluated in the <head> of every webGUI page, so the assets are only
+ * emitted on the Docker page. Hooking in here rather than with Menu="Docker" keeps the
+ * Docker tab's own page count (and so its tabbed/untabbed layout) unchanged.
+ *
+ * MIT License. Copyright (c) 2026 David Coulson.
+ */
+?>
+<?if (($myPage['name'] ?? '') === 'Docker' && is_file('/var/run/dockerd.pid')):?>
+<link type="text/css" rel="stylesheet" href="<?autov('/plugins/docker.search/css/docker-search.css')?>">
+<script src="<?autov('/plugins/docker.search/js/filter-core.js')?>"></script>
+<script src="<?autov('/plugins/docker.search/js/docker-search.js')?>"></script>
+<?endif;?>

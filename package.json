@@ -1,0 +1,11 @@
+{
+  "name": "unraid-docker-search",
+  "private": true,
+  "description": "Unraid plugin: search box and quick filters for the Docker page",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/",
+    "build": "scripts/build.sh",
+    "serve": "python3 -I scripts/serve.py 8817"
+  }
+}

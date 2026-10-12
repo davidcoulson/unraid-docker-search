@@ -1,0 +1,161 @@
+{
+ "Lbos5o9xBCTQc4VuARZLmAASYfM": {
+  "name": "Plex",
+  "containers": [
+   "plex",
+   "plexautoskip",
+   "PlexTraktSync",
+   "tautulli",
+   "ombi",
+   "kometa",
+   "posterr",
+   "seerr",
+   "Wizarr"
+  ],
+  "settings": {
+   "preview": 1,
+   "expand_tab": false
+  }
+ },
+ "gOWf2pGct0XHO9k0fBHhATg9VM": {
+  "name": "Network",
+  "containers": [
+   "adguardhome",
+   "docker-dns",
+   "netbootxyz",
+   "ntp",
+   "omada-controller",
+   "adguardhome-sync",
+   "ApacheGuacamole",
+   "apprise",
+   "Authelia",
+   "OAuth2Proxy",
+   "torprivoxy",
+   "binhex-privoxyvpn",
+   "qnetd",
+   "unifi-controller-reborn",
+   "Tailscale-Docker",
+   "cloudflareddns",
+   "dockersocket",
+   "MySpeed",
+   "dns-server",
+   "docker-tc",
+   "librespeed"
+  ],
+  "settings": {
+   "preview": 1,
+   "expand_tab": false
+  }
+ },
+ "jFLPUBALJRGesjyjkazSi11as": {
+  "name": "Media",
+  "containers": [
+   "binhex-lidarr",
+   "binhex-qbittorrentvpn",
+   "binhex-radarr",
+   "binhex-radarr4k",
+   "binhex-sabnzbd",
+   "binhex-sonarr",
+   "prowlarr",
+   "binhex-jackett",
+   "gaps",
+   "flaresolverr",
+   "Plaxt",
+   "Pulsarr",
+   "profilarr",
+   "suggestarr",
+   "shrinkray",
+   "bookshelf",
+   "Prismarr",
+   "houndarr"
+  ],
+  "settings": {
+   "preview": 1,
+   "expand_tab": false
+  }
+ },
+ "iD2F55tmuhBCBJYRCfMaxb0yW8k": {
+  "name": "Gaming",
+  "containers": [
+   "epicgames-freegames",
+   "Lancache",
+   "Lancache-DNS",
+   "steam-headless"
+  ],
+  "settings": {
+   "preview": 1,
+   "expand_tab": false
+  }
+ },
+ "gb1ghNuT4ibCev2kfAeh77rZc": {
+  "name": "Monitoring",
+  "containers": [
+   "docker-diag-tools",
+   "netdata",
+   "OpenSpeedTest",
+   "smokeping",
+   "speedtest-tracker",
+   "statping",
+   "Glances",
+   "zabbix-agent2"
+  ],
+  "settings": {
+   "preview": 1,
+   "expand_tab": false
+  }
+ },
+ "8IC5XMjrJvCDDfTi9OUa8w6NBU": {
+  "name": "Utilities",
+  "containers": [
+   "mariadb",
+   "minemeld",
+   "nextcloud",
+   "redis",
+   "Unraid-API",
+   "postgresql15",
+   "Postfix-Relay",
+   "portainer-agent",
+   "linstor-gui",
+   "py-kms",
+   "everything-presence-mmwave-configurator",
+   "IT-Tools",
+   "openvscode-server",
+   "homepage",
+   "duplicacy",
+   "copyparty",
+   "zerobyte",
+   "Framerr"
+  ],
+  "settings": {
+   "preview": 1,
+   "expand_tab": false
+  }
+ },
+ "PoDKvVDdAHcjDHo5p7DgXsWp5Mw": {
+  "name": "AI",
+  "containers": [
+   "ollama",
+   "open-webui",
+   "LocalAI"
+  ],
+  "settings": {
+   "preview": 1,
+   "expand_tab": false
+  }
+ },
+ "T37i9zfLQToyt7V9QPhcBIEr1xw": {
+  "name": "ESPHome",
+  "containers": [
+   "esphome-builder-4",
+   "esphome-builder-3",
+   "esphome-builder-2",
+   "esphome-builder-1",
+   "esphome-builder-6",
+   "esphome-builder-5"
+  ],
+  "settings": {
+   "preview": 1,
+   "expand_tab": false
+  }
+ }
+}

@@ -1,0 +1,62 @@
+/* Fixture page only: the harness toolbar, plus fallbacks when the webGUI CSS is not fetched. */
+body {
+  margin: 0;
+  font-family: clear-sans, sans-serif;
+  font-size: 1.3rem;
+  color: var(--text-color, #333);
+  background: var(--background-color, #f2f2f2);
+}
+html {
+  font-size: 62.5%;
+}
+#fixture-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  padding: 6px 16px;
+  font: 12px/1.6 system-ui, sans-serif;
+  color: #ddd;
+  background: #222;
+}
+#fixture-tools select,
+#fixture-tools button {
+  all: revert;
+  font: 12px system-ui, sans-serif;
+}
+#fixture-tools input[type=checkbox] {
+  all: revert;
+}
+#fx-log {
+  color: #9cf;
+}
+#displaybox {
+  padding: 16px;
+}
+#displaybox .title {
+  margin: 0 0 14px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+#displaybox .title i {
+  margin-right: 8px;
+}
+table#docker_containers {
+  width: 100%;
+  border-collapse: collapse;
+}
+table#docker_containers th,
+table#docker_containers td {
+  padding: 6px 8px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--table-border-color, #ddd);
+}
+.folder-storage {
+  display: none;
+}
+.outer .img {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 8px;
+}
