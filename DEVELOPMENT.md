@@ -90,3 +90,9 @@ picture of your server.
 
 The optional vendor files (webGUI CSS, fonts, icons) are fetched from your own server, are
 Lime Technology's and plugin authors', and stay out of the repository.
+
+## Community Apps
+
+`ca_profile.xml` (repository profile) and `plugins/docker.search.xml` (the plugin wrapper) are
+what Community Apps reads. The wrapper's `<PluginURL>` must match the `.plg`'s `pluginURL`
+exactly. After changing either, run Validate and Scan at <https://ca.unraid.net/submit>.

@@ -1,0 +1,9 @@
+<CommunityApplications>
+  <Profile>
+Docker Search adds a live search box and quick filter buttons to the top of the Docker tab, for anyone with more containers than fit on a screen. Search by name, image, folder, network, IP or port, or filter by running, healthy, updates available, autostart and more. Works with folder.view2.
+
+Support is in the Unraid forum thread; bugs can also go to GitHub issues.
+  </Profile>
+  <WebPage>https://github.com/davidcoulson/unraid-docker-search</WebPage>
+  <Forum>https://forums.unraid.net/topic/200879-plugin-docker-search-live-search-and-quick-filters-for-the-docker-page/</Forum>
+</CommunityApplications>

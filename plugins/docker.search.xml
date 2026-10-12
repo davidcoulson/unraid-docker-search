@@ -1,0 +1,15 @@
+<Plugin>
+  <Name>Docker Search</Name>
+  <Overview>Adds a live search box and quick filter buttons to the top of the Docker containers list. Type to filter by name, image, folder, network, IP or port, use terms like image:linuxserver or is:unhealthy, or click a button for running, stopped, healthy, unhealthy, update available, autostart, WebUI or CPU pinned, each with a live count. Folders from folder.view2 open automatically when they contain a match. Press / to search and Esc to clear. Doesn't change any stock files.</Overview>
+  <PluginURL>https://raw.githubusercontent.com/davidcoulson/unraid-docker-search/main/docker.search.plg</PluginURL>
+  <PluginAuthor>David Coulson</PluginAuthor>
+  <Support>https://forums.unraid.net/topic/200879-plugin-docker-search-live-search-and-quick-filters-for-the-docker-page/</Support>
+  <Project>https://github.com/davidcoulson/unraid-docker-search</Project>
+  <ReadMe>https://raw.githubusercontent.com/davidcoulson/unraid-docker-search/main/README.md</ReadMe>
+  <Category>Tools:Utilities</Category>
+  <IconFA>search</IconFA>
+  <License>MIT</License>
+  <Screenshot>https://raw.githubusercontent.com/davidcoulson/unraid-docker-search/main/docs/search-folders.jpg</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/davidcoulson/unraid-docker-search/main/docs/update-chip-black.jpg</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/davidcoulson/unraid-docker-search/main/docs/combined-help.jpg</Screenshot>
+</Plugin>
