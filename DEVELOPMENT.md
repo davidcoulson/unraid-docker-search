@@ -93,6 +93,6 @@ Lime Technology's and plugin authors', and stay out of the repository.
 
 ## Community Apps
 
-`ca_profile.xml` (repository profile) and `plugins/docker.search.xml` (the plugin wrapper) are
-what Community Apps reads. The wrapper's `<PluginURL>` must match the `.plg`'s `pluginURL`
-exactly. After changing either, run Validate and Scan at <https://ca.unraid.net/submit>.
+The Community Apps listing lives in [davidcoulson/unraid-plugins](https://github.com/davidcoulson/unraid-plugins)
+(`plugins/docker.search.xml`), together with my other plugins. Its `<PluginURL>` must match this
+repo's `.plg` `pluginURL` exactly.
