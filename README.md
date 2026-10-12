@@ -43,7 +43,8 @@ I built this with an AI coding assistant (Claude). I decided what it should do, 
 design, and tested it on my own server. A second AI (Codex) reviewed the code before release,
 and I fixed what it found.
 
-Want to hack on it? See [DEVELOPMENT.md](DEVELOPMENT.md). Bugs and ideas welcome in
-[issues](https://github.com/davidcoulson/unraid-docker-search/issues).
+Questions and feedback: the [support thread](https://forums.unraid.net/topic/200879-plugin-docker-search-live-search-and-quick-filters-for-the-docker-page/) on the Unraid forums, or
+[GitHub issues](https://github.com/davidcoulson/unraid-docker-search/issues) for bugs. Want to
+hack on it? See [DEVELOPMENT.md](DEVELOPMENT.md).
 
 MIT licensed.

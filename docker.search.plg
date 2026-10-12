@@ -2,7 +2,7 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "docker.search">
 <!ENTITY author    "David Coulson">
-<!ENTITY version   "2026.10.12b">
+<!ENTITY version   "2026.10.12c">
 <!ENTITY md5       "07d93e271fca94affee276f489bab16d">
 <!ENTITY github    "davidcoulson/unraid-docker-search">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&github;/main">
@@ -11,9 +11,12 @@
 <!ENTITY pkgdir    "/boot/config/plugins/&name;">
 <!ENTITY pkg       "&name;-&version;-noarch-1">
 ]>
-<PLUGIN name="&name;" author="&author;" version="&version;" launch="Docker" pluginURL="&pluginURL;" icon="search" min="7.0.0" support="https://github.com/&github;/issues">
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="Docker" pluginURL="&pluginURL;" icon="search" min="7.0.0" support="https://forums.unraid.net/topic/200879-plugin-docker-search-live-search-and-quick-filters-for-the-docker-page/">
 
 <CHANGES>
+###2026.10.12c
+- Support link now points to the Unraid forum thread.
+
 ###2026.10.12b
 - Fix: the package now uses a Slackware name (name-version-noarch-1), so upgrades replace the previous version instead of installing alongside it; leftover entries from earlier versions are removed.
 
