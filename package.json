@@ -4,7 +4,7 @@
   "description": "Unraid plugin: search box and quick filters for the Docker page",
   "license": "MIT",
   "scripts": {
-    "test": "node --test test/",
+    "test": "node --test test/*.test.js",
     "build": "scripts/build.sh",
     "serve": "python3 -I scripts/serve.py 8817"
   }

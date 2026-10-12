@@ -12,7 +12,7 @@ version=${1:-$(date +%Y.%m.%d)}
 pkg="$here/archive/$name-$version-noarch-1.txz"
 
 cd "$here"
-node --test test/ >/dev/null
+node --test test/*.test.js >/dev/null
 
 find "src/$name" -type d -exec chmod 755 {} +
 find "src/$name" -type f -exec chmod 644 {} +
