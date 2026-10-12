@@ -2,17 +2,21 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "docker.search">
 <!ENTITY author    "David Coulson">
-<!ENTITY version   "2026.10.12a">
+<!ENTITY version   "2026.10.12b">
 <!ENTITY md5       "07d93e271fca94affee276f489bab16d">
 <!ENTITY github    "davidcoulson/unraid-docker-search">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&github;/main">
 <!ENTITY pluginURL "&gitURL;/&name;.plg">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY pkgdir    "/boot/config/plugins/&name;">
+<!ENTITY pkg       "&name;-&version;-noarch-1">
 ]>
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="Docker" pluginURL="&pluginURL;" icon="search" min="7.0.0" support="https://github.com/&github;/issues">
 
 <CHANGES>
+###2026.10.12b
+- Fix: the package now uses a Slackware name (name-version-noarch-1), so upgrades replace the previous version instead of installing alongside it; leftover entries from earlier versions are removed.
+
 ###2026.10.12a
 - Fix: crafted filter ids in the URL (e.g. #f=constructor) no longer break filtering.
 - Fix: full image tags are searchable even when the page shortens them.
@@ -25,17 +29,22 @@
 - First release: live search box and quick filter chips on the Docker page, with folder.view2 support.
 </CHANGES>
 
-<!-- Remove packages from older versions. -->
+<!-- Remove older versions: their downloads, and their installed-package records (versions before
+     2026.10.12b had names upgradepkg could not match, so they were never replaced). -->
 <FILE Run="/bin/bash">
 <INLINE>
-find &pkgdir; -maxdepth 1 -name '&name;-*.txz' ! -name '&name;-&version;.txz' -delete 2>/dev/null
+find &pkgdir; -maxdepth 1 -name '&name;-*.txz' ! -name '&pkg;.txz' -delete 2>/dev/null
+for p in /var/log/packages/&name;-*; do
+  [ -e "$p" ] || continue
+  [ "$(basename "$p")" = "&pkg;" ] || removepkg "$(basename "$p")" &gt;/dev/null 2&gt;&amp;1
+done
 true
 </INLINE>
 </FILE>
 
 <!-- The plugin files (installs to &plugdir;). -->
-<FILE Name="&pkgdir;/&name;-&version;.txz" Run="upgradepkg --install-new">
-<URL>&gitURL;/archive/&name;-&version;.txz</URL>
+<FILE Name="&pkgdir;/&pkg;.txz" Run="upgradepkg --install-new">
+<URL>&gitURL;/archive/&pkg;.txz</URL>
 <MD5>&md5;</MD5>
 </FILE>
 
@@ -53,7 +62,9 @@ echo ""
 <!-- Uninstall: the package, its files and the flash folder. -->
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
-removepkg &name;-&version; 2>/dev/null || removepkg &pkgdir;/&name;-&version;.txz 2>/dev/null
+for p in /var/log/packages/&name;-*; do
+  [ -e "$p" ] &amp;&amp; removepkg "$(basename "$p")" &gt;/dev/null 2&gt;&amp;1
+done
 rm -rf &plugdir;
 rm -rf &pkgdir;
 echo "&name; has been removed."

@@ -9,7 +9,7 @@ set -euo pipefail
 here=$(cd "$(dirname "$0")/.." && pwd)
 name=docker.search
 version=${1:-$(date +%Y.%m.%d)}
-pkg="$here/archive/$name-$version.txz"
+pkg="$here/archive/$name-$version-noarch-1.txz"
 
 cd "$here"
 node --test test/ >/dev/null
